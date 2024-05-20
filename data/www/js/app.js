@@ -1,7 +1,9 @@
 new Vue({
     el: '#app',
     data: {
-      direction: 'stop',
+      direction: 'up',
+      directionud: '1',
+      directionlr: '00',
       power: false,
       speed: 0
     },
@@ -19,26 +21,33 @@ new Vue({
         this.updateStatus();
       },
       updateStatus() {
-        let directionCode;
+        if (!this.power) {
+          this.speed = 0;
+        }
         switch (this.direction) {
           case 'up':
-            directionCode = '1';
+            this.directionud = '0';
             break;
           case 'down':
-            directionCode = '0';
+            this.directionud = '1';
             break;
           case 'left':
-            directionCode = '10';
+            this.directionlr = '10';
             break;
           case 'right':
-            directionCode = '01';
+            this.directionlr = '01';
+            break;
+          case 'current':
+            this.directionlr = '00';
             break;
           case 'stop':
+            this.speed = 0;
+            break;
           default:
-            directionCode = '00';
+            this.speed = 0;
             break;
         }
-        const value = `${this.power ? 1 : 0}${directionCode}${parseInt(this.speed).toString(2).padStart(2, '0')}`;
+        const value = `${this.directionud}${this.directionlr}${parseInt(this.speed).toString(2).padStart(2, '0')}`;
         fetch(`/status?value=${value}`)
           .then(response => response.text())
           .then(status => {
