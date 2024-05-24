@@ -56,7 +56,7 @@ void setup() {
   server.on("/status", HTTP_GET, [](AsyncWebServerRequest* request) {
     if (request->hasParam("value")) {
       AsyncWebParameter* p = request->getParam("value");
-      // value格式“正反向（1/0）左右向（01右/10左）速度（2位二进制）”
+      // value格式“正反向（0/1）左右向（01右/10左）速度（2位二进制）”
       uint8_t rotate = p->value().charAt(0) - '0';
       uint8_t direction1 = p->value().charAt(1) - '0';
       uint8_t direction0 = p->value().charAt(2) - '0';

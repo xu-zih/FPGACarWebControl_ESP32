@@ -1,45 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FPGA Car Control</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>
-<body>
-  <div id="app" class="container">
-    <h4 class="center-align">FPGA Car Control</h4>
-    <div class="row center-align">
-      <div class="col s12">
-        <div class="joystick">
-          <i class="material-icons" @mousedown="startControl('up')" >arrow_upward</i>
-          <br>
-          <i class="material-icons" @mousedown="startControl('left')" @mouseup="startControl('current')">arrow_back</i>
-          <i class="material-icons" @mousedown="startControl('stop')">stop</i>
-          <i class="material-icons" @mousedown="startControl('right')" @mouseup="startControl('current')">arrow_forward</i>
-          <br>
-          <i class="material-icons" @mousedown="startControl('down')">arrow_downward</i>
-        </div>
-      </div>
-    </div>
-    <div class="row center-align">
-      <div class="col s12">
-        <a class="waves-effect waves-light btn" @click="togglePower">{{ power ? 'Turn Off' : 'Turn On' }}</a>
-      </div>
-    </div>
-    <div class="row center-align">
-      <div class="col s12">
-        <label for="speed">Speed</label>
-        <p class="range-field">
-          <input type="range" id="speed" min="0" max="3" v-model="speed" @input="updateStatus">
-        </p>
-      </div>
-    </div>
-  </div>
-  <script src="lib/vue.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <title>FPGA智能小车控制</title>
+    <script type="module" crossorigin src="/assets/index-qj2DhbQ5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D7u3PnjP.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
 </html>
