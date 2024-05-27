@@ -12,8 +12,8 @@ const int SPEED1 = 38;
 const int SPEED0 = 39;
 
 // Wifi information
-const char* WIFI_UUID = "CS110";
-const char* WIFI_PASSWORD = "asc2023.";
+const char* WIFI_UUID = "r1k";
+const char* WIFI_PASSWORD = "12345678901234567890";
 
 // Web server
 AsyncWebServer server(80);
